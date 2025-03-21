@@ -5,7 +5,7 @@
 
         <div class="col-md-8 offset-md-1">
             <h2>Books</h2>
-            <table class="table">
+            <table class="table table-hover table-inverse">
                 <thead>
                     <tr>
                         <th></th>
@@ -19,7 +19,9 @@
                         <tr>
                             <td>
                                 <% if book.user.present? %>
+                                <%= link_to user_path(book.user_id) do %>
                                 <%= image_tag book.user.get_profile_image(80,80) %>
+                                <% end %>
                                 <% end %>
                             </td>
                             <td><%= link_to book.title, book_path(book.id) %></td>
