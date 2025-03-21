@@ -1,0 +1,8 @@
+<% if form.errors.any? %>
+    <h3><%= form.errors.count %> errors prohibited this obj from being saved: </h3>
+    <ul>
+        <% form.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
