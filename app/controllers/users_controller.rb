@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
+        flash[:notice] = "You have created book successfully."
         redirect_to book_path(@book.id)
     else
         render :index
@@ -34,7 +35,8 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     @user.update(user_params)
-    if @user.save 
+    if @user.save
+      flash[:notice] = "You have updated user successfully."
       redirect_to user_path(@user.id)
     else
       render :index
