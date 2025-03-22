@@ -1,6 +1,7 @@
 <div class="container px-5 px-sm-0">
+<%= render "error", form: @book %>
     <div class="row">
-        <%= render 'new', book: @newbook, user: @infouser %>
+        <%= render 'new', book: @book, user: @infouser %>
         <div class="col-md-8 offset-md-1">
             <h2>Books</h2>
             <table class="table table-hover table-inverse">
